@@ -6529,7 +6529,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libnotifyaudiohal.so"],
-			shared_libs: ["libbase", "libbinder", "liblog", "libhidlbase", "libutils", "libcutils", "libxml2", "android.hardware.audio@6.0", "android.hardware.audio.common@6.0", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libbase", "libbinder", "liblog", "libhidlbase", "libutils", "libcutils", "libxml2", "android.hardware.audio@7.0", "android.hardware.audio.common@7.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -10718,23 +10718,6 @@ prebuilt_etc_xml {
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
-}
-
-cc_prebuilt_binary {
-	name: "chargeonlymode",
-	owner: "xiaomi",
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/system/bin/chargeonlymode"],
-			shared_libs: ["libbase", "libcutils", "libhidlbase", "liblog", "libutils", "libpng", "android.hardware.health@2.0", "android.hardware.health@2.1", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	check_elf_files: false,
-	strip: {
-		none: true,
-	},
-	prefer: true,
 }
 
 cc_prebuilt_binary {
