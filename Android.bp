@@ -13602,6 +13602,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libstfactory-vendor.so",
             ],
             shared_libs: [
+                "libbase_shim",
                 "libcutils",
                 "libutils",
                 "liblog",
@@ -13619,7 +13620,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -18765,6 +18765,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/STFlashTool",
             ],
             shared_libs: [
+                "libbase_shim",
                 "libcutils",
                 "libutils",
                 "liblog",
@@ -18782,7 +18783,6 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
