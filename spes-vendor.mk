@@ -384,6 +384,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/spes/proprietary/vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 PRODUCT_PACKAGES += \
+    vendor.qti.diaghal-V1-ndk \
     eglSubDriverAndroid \
     libEGL_adreno \
     libGLESv1_CM_adreno \
@@ -395,6 +396,7 @@ PRODUCT_PACKAGES += \
     libCB \
     libOpenCL \
     libVkLayer_q3dtools \
+    libadreno_app_profiles \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
@@ -425,6 +427,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.fingerprint@1.0 \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
+    vendor.qti.qspmhal@1.0-impl \
+    vendor.qti.qspmhal@1.0 \
     btaudio_offload_if \
     audio.bluetooth_qti.default \
     audio.primary.bengal \
@@ -926,6 +930,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim_remote_client@1.1 \
     vendor.qti.hardware.radio.uim_remote_client@1.2 \
     vendor.qti.hardware.radio.uim_remote_server@1.0 \
+    vendor.qti.hardware.scve.objecttracker@1.0 \
+    vendor.qti.hardware.scve.panorama@1.0 \
     vendor.qti.hardware.sensorscalibrate@1.0 \
     vendor.qti.hardware.slmadapter@1.0 \
     vendor.qti.hardware.soter@1.0 \
@@ -942,8 +948,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@3.0_vendor \
     vendor.qti.latency@2.0 \
     vendor.qti.latency@2.1 \
-    vendor.qti.qspmhal@1.0-impl \
-    vendor.qti.qspmhal@1.0 \
     capi_v2_aptX_CLHDADV_Encoder \
     capi_v2_aptX_CLHDAD_Speech_Decoder \
     capi_v2_aptX_Classic \
@@ -991,10 +995,10 @@ PRODUCT_PACKAGES += \
     CneApp \
     IWlanService \
     TimeService \
-    PowerOffAlarm \
     HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND \
     HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
     DeviceInfo \
+    PowerOffAlarm \
     QtiTelephonyService \
     dpmserviceapp \
     ims \
@@ -1007,7 +1011,6 @@ PRODUCT_PACKAGES += \
     dpmapi \
     qcrilhook \
     qti-telephony-common \
-    vendor.qti.hardware.alarm-V1.0-java \
     vendor.qti.ims.connection-V1.0-java \
     vendor.qti.ims.factory-V2.0-java \
     vendor.qti.ims.factory-V2.1-java \
@@ -1099,7 +1102,7 @@ PRODUCT_PACKAGES += \
     system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so \
     vendor_lib_libEGL_adreno_so \
     vendor_lib_libGLESv2_adreno_so \
-    vendor_lib_libq3dtools_adreno_so \
+    vendor_lib_libq3dtools_adreno \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so

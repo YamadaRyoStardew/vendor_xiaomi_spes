@@ -22,6 +22,31 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.diaghal-V1-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/vendor.qti.diaghal-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
     name: "eglSubDriverAndroid",
     owner: "xiaomi",
     strip: {
@@ -545,6 +570,59 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadreno_app_profiles",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadreno_app_profiles.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libhardware",
+                "libutils",
+                "libhidlbase",
+                "libhidlmemory",
+                "android.hidl.memory@1.0",
+                "vendor.qti.qspmhal@1.0",
+                "libdl",
+                "libz",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadreno_app_profiles.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libhardware",
+                "libutils",
+                "libhidlbase",
+                "libhidlmemory",
+                "android.hidl.memory@1.0",
+                "vendor.qti.qspmhal@1.0",
+                "libdl",
+                "libz",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
             ],
         },
     },
@@ -1781,6 +1859,100 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "vendor.qti.hardware.vpp@1.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qspmhal@1.0-impl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.qspmhal@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "vendor.qti.qspmhal@1.0",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlbase",
+                "libhidlmemory",
+                "liblog",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.qspmhal@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "vendor.qti.qspmhal@1.0",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlbase",
+                "libhidlmemory",
+                "liblog",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qspmhal@1.0",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.qti.qspmhal@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.qspmhal@1.0.so",
+            ],
+            shared_libs: [
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -7390,9 +7562,9 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "vendor.qti.hardware.fm@1.0_vendor",
                 "android.hardware.bluetooth@1.0-impl-qti",
+                "libqmi_cci",
                 "libqmi",
                 "libqmiservices",
-                "libqmi_cci",
                 "libc++",
                 "libc",
                 "libm",
@@ -17018,6 +17190,62 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.scve.objecttracker@1.0",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.scve.panorama@1.0",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.sensorscalibrate@1.0",
     owner: "xiaomi",
     strip: {
@@ -17464,66 +17692,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "vendor.qti.latency@2.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.qspmhal@1.0-impl",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.qspmhal@1.0-impl.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "vendor.qti.qspmhal@1.0",
-                "android.hidl.allocator@1.0",
-                "android.hidl.memory@1.0",
-                "libhidlbase",
-                "libhidlmemory",
-                "liblog",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.qspmhal@1.0",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.qspmhal@1.0.so",
-            ],
-            shared_libs: [
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -18010,6 +18178,8 @@ cc_prebuilt_library_shared {
                 "libhidlmemory",
                 "libc",
                 "libcutils",
+                "libbinder_ndk",
+                "vendor.qti.diaghal-V1-ndk",
                 "libc++",
                 "libm",
                 "libdl",
@@ -18394,17 +18564,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "PowerOffAlarm",
-    owner: "xiaomi",
-    apk: "proprietary/product/app/PowerOffAlarm/PowerOffAlarm.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
     name: "HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND",
     owner: "xiaomi",
     apk: "proprietary/product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk",
@@ -18432,6 +18591,17 @@ android_app_import {
     name: "DeviceInfo",
     owner: "xiaomi",
     apk: "proprietary/system_ext/app/DeviceInfo/DeviceInfo.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "PowerOffAlarm",
+    owner: "xiaomi",
+    apk: "proprietary/system_ext/app/PowerOffAlarm/PowerOffAlarm.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -18553,15 +18723,6 @@ dex_import {
     owner: "xiaomi",
     jars: [
         "proprietary/system_ext/framework/qti-telephony-common.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.hardware.alarm-V1.0-java",
-    owner: "xiaomi",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -20881,9 +21042,9 @@ install_symlink {
 }
 
 install_symlink {
-    name: "vendor_lib_libq3dtools_adreno_so",
+    name: "vendor_lib_libq3dtools_adreno",
     soc_specific: true,
-    installed_location: "lib/libq3dtools_adreno.so",
+    installed_location: "lib/libq3dtools_adreno",
     symlink_target: "/vendor/lib/egl/libq3dtools_adreno.so",
 }
 
