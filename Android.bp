@@ -11500,6 +11500,36 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libmmrtpdecoder",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/system_ext/lib64/libmmrtpdecoder.so"],
+        },
+    },
+    compile_multilib: "64",
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmrtpencoder",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/system_ext/lib64/libmmrtpencoder.so"],
+        },
+    },
+    compile_multilib: "64",
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmmcamera_faceproc2",
     owner: "xiaomi",
     strip: {
@@ -21065,4 +21095,572 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
+}
+cc_prebuilt_library_shared {
+    name: "libpalclient",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libpalclient.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libc++",
+        "libc",
+        "libcutils",
+        "libdl",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "liblog",
+        "libm",
+        "libutils",
+        "vendor.qti.hardware.pal@1.0",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_base",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_base.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_basecodec",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_basecodec.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libqc2audio_platform",
+        "libqc2audio_utils",
+        "libqdMetaData",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_core",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_core.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libqc2audio_basecodec",
+        "libqc2audio_hooks",
+        "libqc2audio_platform",
+        "libqc2audio_utils",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_hooks",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_hooks.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_hwaudiocodec",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_hwaudiocodec.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libpalclient",
+        "libqc2audio_base",
+        "libqc2audio_basecodec",
+        "libqc2audio_platform",
+        "libqc2audio_utils",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_platform",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_platform.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libqdMetaData",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_swaudiocodec",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_swaudiocodec.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libqc2audio_basecodec",
+        "libqc2audio_platform",
+        "libqc2audio_utils",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2audio_utils",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2audio_utils.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2audio_base",
+        "libqc2audio_platform",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2colorconvertfilter",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2colorconvertfilter.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqc2filter",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_mockfilter",
+        "libqcodec2_utils",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqc2filter",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqc2filter.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_utils",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_base",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_base.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_basecodec",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_basecodec.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_platform",
+        "libqcodec2_utils",
+        "libutils",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_core",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_core.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_hooks",
+        "libqcodec2_platform",
+        "libqcodec2_utils",
+        "libutils",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_filterbase",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_filterbase.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_utils",
+        "libutils",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_hooks",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_hooks.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_mockfilter",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_mockfilter.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_platform",
+        "libqcodec2_utils",
+        "libqcodec2_v4l2codec",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_mockqc2filter",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_mockqc2filter.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_filterbase",
+        "libqcodec2_utils",
+        "libutils",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_platform",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_platform.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "libjsoncpp",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libutils",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_utils",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_utils.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "android.hardware.graphics.mapper@3.0",
+        "android.hardware.graphics.mapper@4.0",
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdisplayconfig.qti",
+        "libdl",
+        "libgralloc.qti",
+        "libgralloctypes",
+        "libgrallocutils",
+        "libhidlbase",
+        "liblog",
+        "libm",
+        "libnativewindow",
+        "libqcodec2_base",
+        "libqcodec2_platform",
+        "libutils",
+        "libvideotxr",
+        "qti.video.utils.videobufferlayout",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcodec2_v4l2codec",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libqcodec2_v4l2codec.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libqcodec2_base",
+        "libqcodec2_basecodec",
+        "libqcodec2_platform",
+        "libqcodec2_utils",
+        "libutils",
+        "libvmmem",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvideotxr",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libvideotxr.so"] } },
+    compile_multilib: "64",
+    shared_libs: ["libc++", "libc", "libcodec2_vndk", "libcutils", "libdl", "liblog", "libm", "libnativewindow", "libutils"],
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvmmem",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libvmmem.so"] } },
+    compile_multilib: "64",
+    shared_libs: ["libbase", "libc++", "libc", "libdl", "liblog", "libm"],
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "qti.video.utils.videobufferlayout",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/qti.video.utils.videobufferlayout.so"] } },
+    compile_multilib: "64",
+    shared_libs: ["libbase", "libc++", "libc", "libdl", "liblog", "libm", "libutils"],
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.pal@1.0",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.pal@1.0.so"] } },
+    compile_multilib: "64",
+    shared_libs: ["libc++", "libc", "libcutils", "libdl", "libhidlbase", "liblog", "libm", "libutils"],
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmosal_vendor2",
+    stem: "libmmosal_vendor", // This stem completely fixes the internal DT_SONAME verification crash!
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libmmosal_vendor.so"] } },
+    shared_libs: ["libc++", "libc", "libcutils", "libdl", "liblog", "libm", "libutils"],
+    compile_multilib: "64",
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmrtpdecoder_vendor",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libmmrtpdecoder_vendor.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libmmosal_vendor2", // Points explicitly to our configured module name
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmrtpencoder_vendor",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: { android_arm64: { srcs: ["proprietary/vendor/lib64/libmmrtpencoder_vendor.so"] } },
+    compile_multilib: "64",
+    vendor: true,
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libmmosal_vendor2", // Points explicitly to our configured module name
+        "libutils",
+    ],
 }
